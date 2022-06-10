@@ -60,24 +60,24 @@ colon-delineated 64-bit address (for IPv6) immediately following the text `"radd
 
 In this example, the candidate's {{domxref("RTCIceCandidate.type", "type")}} is
 checked, and then debugging output is presented, based on the candidate type, including
-the candidate's {{domxref("RTCIceCandidate/address", "ip")}} and `relatedAddress`.
+the candidate's {{domxref("RTCIceCandidate/address", "address")}} and `relatedAddress`.
 
 ```js
 switch(candidate.type) {
   case "host":
-    console.log("Host candidate's IP address is " + candidate.ip);
+    console.log("Host candidate's IP address is " + candidate.address);
     break;
   case "srflx":
     console.log("Server reflexive candidate's base address is " +
-        candidate.relatedAddress + "; reachable at " + candidate.ip);
+        candidate.relatedAddress + "; reachable at " + candidate.address);
     break;
   case "prflx":
     console.log("Peer reflexive candidate's base address is " +
-        candidate.relatedAddress + "; reachable at " + candidate.ip);
+        candidate.relatedAddress + "; reachable at " + candidate.address);
     break;
   case "relay":
     console.log("Relay candidate's address assigned by the TURN server is " +
-        candidate.relatedAddress + "; reachable at " + candidate.ip);
+        candidate.relatedAddress + "; reachable at " + candidate.address);
     break;
 }
 ```
